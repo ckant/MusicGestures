@@ -27,3 +27,7 @@
 **Screenshots**
 
 <img src="https://raw.github.com/ckant/MusicGestures/master/images/preview.png" />
+
+**Download**
+
+[MusicGestures @ the BigBoss Cydia Repository](http://apt.thebigboss.org/onepackage.php?bundleid=com.ckant.musicgestures&db=)
