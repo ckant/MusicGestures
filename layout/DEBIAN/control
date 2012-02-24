@@ -1,0 +1,10 @@
+Package: com.ckant.musicgestures
+Name: MusicGestures
+Depends: mobilesubstrate, preferenceloader
+Replaces: com.ckant.swipablemusic
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Adds gestures to the Music app
+Maintainer: Chris Kant
+Author: Chris Kant
+Section: Tweaks
