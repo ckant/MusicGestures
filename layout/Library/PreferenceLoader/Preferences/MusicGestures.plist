@@ -43,6 +43,7 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -53,6 +54,7 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -79,6 +81,7 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -89,6 +92,7 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -115,6 +119,7 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -125,6 +130,7 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -151,6 +157,7 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -161,6 +168,7 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -308,6 +316,46 @@
 			</array>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontLongPress</string>
+			<key>label</key>
+			<string>Press And Hold</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Seek Backward</string>
+				<string>Seek Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>8</string>
+				<string>9</string>
+			</array>
+		</dict>
+		<dict>
 			<key>label</key>
 			<string>Back Album Cover</string>
 			<key>cell</key>
@@ -336,6 +384,7 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -345,6 +394,7 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -370,6 +420,7 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -379,6 +430,7 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -404,6 +456,7 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -413,6 +466,7 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -438,6 +492,7 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -447,6 +502,7 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>7</string>
 			</array>
 		</dict>
 		<dict>
