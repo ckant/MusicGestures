@@ -4,16 +4,16 @@
  * Author: Chris Kant (chriskant@gmail.com)
  * Date:   2012
  */
- 
-#import "IUNowPlayingBackViewController.h"
+
+#import "IUNowPlayingAlbumFrontViewController.h"
 #import "MusicGestures.h"
 
-@implementation IUNowPlayingAlbumBackViewController (MusicGestures)
+@implementation IUNowPlayingAlbumFrontViewController (MusicGestures)
 
 -(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity {
 
-  [self performActionForKey:kGestureBackPinch];
-
+  [self performActionForKey:kGestureFrontPinch];
+  
 }
 
 -(void)swipableView:(id)view 
@@ -24,28 +24,28 @@
   switch(direction) {
     
     case MGSwipeUp:
-      [self performPanActionForKey:kGestureBackSwipeUp
+      [self performPanActionForKey:kGestureFrontSwipeUp
             inDirection:direction
             withDistance:distance
             withVelocity:velocity];
       break;
           
     case MGSwipeDown:
-      [self performPanActionForKey:kGestureBackSwipeDown
+      [self performPanActionForKey:kGestureFrontSwipeDown
             inDirection:direction
             withDistance:distance
             withVelocity:velocity];
       break;
     
     case MGSwipeLeft:
-      [self performPanActionForKey:kGestureBackSwipeLeft
+      [self performPanActionForKey:kGestureFrontSwipeLeft
             inDirection:direction
             withDistance:distance
             withVelocity:velocity];
       break;
     
     case MGSwipeRight:
-      [self performPanActionForKey:kGestureBackSwipeRight
+      [self performPanActionForKey:kGestureFrontSwipeRight
             inDirection:direction
             withDistance:distance
             withVelocity:velocity];
@@ -55,4 +55,19 @@
 
 }
 
-@end /* IUNowPlayingAlbumBackViewController (MusicGestures) */
+-(void)swipableView:(id)view
+       longPressedInState:(UIGestureRecognizerState)state {
+
+  if (state == UIGestureRecognizerStateBegan) {
+  
+    [self performLongPressBeginActionForKey:kGestureFrontLongPress];
+  
+  } else if (state == UIGestureRecognizerStateEnded) {
+  
+    [self performLongPressEndActionForKey:kGestureFrontLongPress];
+  
+  }
+       
+}
+
+@end /* IUNowPlayingAlbumFrontViewController (MusicGestures) */

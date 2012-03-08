@@ -8,8 +8,8 @@
 #import "MusicGestures.h"
 #import "MPViewController.h"
 #import "MPSwipableView.h"
-#import "IUNowPlayingFrontViewController.h"
-#import "IUNowPlayingBackViewController.h"
+#import "IUNowPlayingAlbumFrontViewController.h"
+#import "IUNowPlayingAlbumBackViewController.h"
 
 
 #define kDefaultsFilename \

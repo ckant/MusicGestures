@@ -7,8 +7,8 @@ TWEAK_NAME = MusicGestures
 MusicGestures_FILES = Tweak.xm \
                       MPSwipableView.m \
                       MPViewController.m \
-                      IUNowPlayingFrontViewController.m \
-                      IUNowPlayingBackViewController.m
+                      IUNowPlayingAlbumFrontViewController.m \
+                      IUNowPlayingAlbumBackViewController.m
 MusicGestures_FRAMEWORKS = MediaPlayer UIKit
 MusicGestures_PRIVATE_FRAMEWORKS = iPodUI
 

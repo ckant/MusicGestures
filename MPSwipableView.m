@@ -6,8 +6,8 @@
  */
  
 #import "MPSwipableView.h"
-#import "IUNowPlayingBackViewController.h"
-#import "IUNowPlayingFrontViewController.h"
+#import "IUNowPlayingAlbumBackViewController.h"
+#import "IUNowPlayingAlbumFrontViewController.h"
 #import "MusicGestures.h"
 
 @implementation MPSwipableView (MusicGestures)
