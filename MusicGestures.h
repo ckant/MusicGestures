@@ -5,21 +5,29 @@
  * Date:   2012
  */
 
-#import <MediaPlayer/MPViewController.h>
-#import <MediaPlayer/MPSwipableViewDelegate.h>
+
+
+#import <MediaPlayer/MPAVController.h>
 
 typedef enum {
+  MGSwipeNone  = 0,
   MGSwipeUp    = 1,
   MGSwipeDown  = 2,
   MGSwipeLeft  = 3,
-  MGSwipeRight = 4
+  MGSwipeRight = 4,
 } MGSwipe;
 
 typedef enum {
   MGTapSingle = 1,
   MGTapDouble = 2,
-  MGTapTriple = 3
+  MGTapTriple = 3,
 } MGTap;
+
+typedef enum {
+  MGShuffleTypeOff    = 0,
+  MGShuffleTypeSongs  = 1,
+  MGShuffleTypeAlbums = 2,
+} MGShuffleType;
 
 typedef enum {
   MGActionPrevTrack       = 1,
@@ -27,34 +35,34 @@ typedef enum {
   MGActionTogglePlayback  = 3,
   MGActionFlip            = 4,
   MGActionExitNowPlaying  = 5,
-  MGActionInfoOverlay     = 6
+  MGActionInfoOverlay     = 6,
+  MGActionAdjustVolume    = 7,
+  MGActionSeekBackward    = 8,
+  MGActionSeekForward     = 9,
 } MGAction;
 
-@interface IUNowPlayingAlbumFrontViewController 
-  : MPViewController <MPSwipableViewDelegate> {}
--(void)_handleSingleTap;
-@end
+extern NSString* const kGestureFrontSwipeUp;
+extern NSString* const kGestureFrontSwipeDown;
+extern NSString* const kGestureFrontSwipeLeft;
+extern NSString* const kGestureFrontSwipeRight;
 
-@interface IUNowPlayingAlbumBackViewController 
-  : MPViewController <MPSwipableViewDelegate> {}
-@end
+extern NSString* const kGestureFrontTapSingle;
+extern NSString* const kGestureFrontTapDouble;
+extern NSString* const kGestureFrontTapTriple;
 
-/* Added Methods  */
+extern NSString* const kGestureFrontPinch;
 
-@interface MPViewController (MusicGestures)
--(void)performActionForKey:(NSString*)key;
--(void)prevTrack;
--(void)nextTrack;
--(void)togglePlayback;
--(void)flip;
--(void)exitNowPlaying;
--(void)showInfoOverlay;
-@end
+extern NSString* const kGestureFrontLongPress;
 
-@interface IUNowPlayingAlbumFrontViewController (MusicGestures)
--(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity;
-@end
+extern NSString* const kGestureBackSwipeUp;
+extern NSString* const kGestureBackSwipeDown;
+extern NSString* const kGestureBackSwipeLeft;
+extern NSString* const kGestureBackSwipeRight;
 
-@interface IUNowPlayingAlbumBackViewController (MusicGestures)
--(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity;
-@end
+extern NSString* const kGestureBackTapSingle;
+extern NSString* const kGestureBackTapDouble;
+extern NSString* const kGestureBackTapTriple;
+
+extern NSString* const kGestureBackPinch;
+
+extern NSMutableDictionary* preferencesDict;
