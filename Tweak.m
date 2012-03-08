@@ -6,6 +6,10 @@
  */
 
 #import "MusicGestures.h"
+#import "MPViewController.h"
+#import "MPSwipableView.h"
+#import "IUNowPlayingFrontViewController.h"
+#import "IUNowPlayingBackViewController.h"
 
 
 #define kDefaultsFilename \
@@ -14,30 +18,32 @@
 
 #define kPreferencesUpdated "com.ckant.musicgestures.updatePrefs"
 
-static NSMutableDictionary* preferencesDict = nil;
+NSMutableDictionary* preferencesDict = nil;
 
 /* Gestures */
-static NSString* const kGestureFrontSwipeUp    = @"frontSwipeUp";
-static NSString* const kGestureFrontSwipeDown  = @"frontSwipeDown";
-static NSString* const kGestureFrontSwipeLeft  = @"frontSwipeLeft";
-static NSString* const kGestureFrontSwipeRight = @"frontSwipeRight";
+NSString* const kGestureFrontSwipeUp    = @"frontSwipeUp";
+NSString* const kGestureFrontSwipeDown  = @"frontSwipeDown";
+NSString* const kGestureFrontSwipeLeft  = @"frontSwipeLeft";
+NSString* const kGestureFrontSwipeRight = @"frontSwipeRight";
 
-static NSString* const kGestureFrontTapSingle  = @"frontTapSingle";
-static NSString* const kGestureFrontTapDouble  = @"frontTapDouble";
-static NSString* const kGestureFrontTapTriple  = @"frontTapTriple";
+NSString* const kGestureFrontTapSingle  = @"frontTapSingle";
+NSString* const kGestureFrontTapDouble  = @"frontTapDouble";
+NSString* const kGestureFrontTapTriple  = @"frontTapTriple";
 
-static NSString* const kGestureFrontPinch      = @"frontPinch";
+NSString* const kGestureFrontPinch      = @"frontPinch";
 
-static NSString* const kGestureBackSwipeUp     = @"backSwipeUp";
-static NSString* const kGestureBackSwipeDown   = @"backSwipeDown";
-static NSString* const kGestureBackSwipeLeft   = @"backSwipeLeft";
-static NSString* const kGestureBackSwipeRight  = @"backSwipeRight";
+NSString* const kGestureFrontLongPress  = @"frontLongPress";
 
-static NSString* const kGestureBackTapSingle   = @"backTapSingle";
-static NSString* const kGestureBackTapDouble   = @"backTapDouble";
-static NSString* const kGestureBackTapTriple   = @"backTapTriple";
+NSString* const kGestureBackSwipeUp     = @"backSwipeUp";
+NSString* const kGestureBackSwipeDown   = @"backSwipeDown";
+NSString* const kGestureBackSwipeLeft   = @"backSwipeLeft";
+NSString* const kGestureBackSwipeRight  = @"backSwipeRight";
 
-static NSString* const kGestureBackPinch       = @"backPinch";
+NSString* const kGestureBackTapSingle   = @"backTapSingle";
+NSString* const kGestureBackTapDouble   = @"backTapDouble";
+NSString* const kGestureBackTapTriple   = @"backTapTriple";
+
+NSString* const kGestureBackPinch       = @"backPinch";
 
 
 /**
@@ -86,90 +92,6 @@ static void reloadPreferencesCallback(CFNotificationCenterRef center,
                               const void* object, CFDictionaryRef userInfo) {
   reloadPreferences();
 }
-
-
-@implementation MPViewController (MusicGestures)
-
--(void)performActionForKey:(NSString*)key {
-
-  NSNumber* actionNum = [preferencesDict objectForKey:key];
-  MGAction action = (MGAction)[actionNum intValue];
-  
-  switch(action) {
-  
-    case MGActionPrevTrack:
-      [self prevTrack];
-      break;
-    
-    case MGActionNextTrack:
-      [self nextTrack];
-      break;          
-      
-    case MGActionTogglePlayback:
-      [self togglePlayback];
-      break;
-      
-    case MGActionFlip:
-      [self flip];
-      break;
-      
-    case MGActionExitNowPlaying:
-      [self exitNowPlaying];
-      break;
-      
-    case MGActionInfoOverlay:
-      [self showInfoOverlay];
-      break;
-      
-  }
-  
-}
-
--(void)prevTrack {
-  [[self player] changePlaybackIndexBy:-1];
-}
-
--(void)nextTrack {
-  [[self player] changePlaybackIndexBy:1];
-}
-
--(void)togglePlayback {
-  [[self player] togglePlayback];
-}
-
--(void)flip {
-  [[self delegate] flip:self];
-}
-
--(void)exitNowPlaying {
-  [[self delegate] _exitNowPlaying];
-}
-
--(void)showInfoOverlay {
-  [self _handleSingleTap];
-}
-
-@end /* MPViewController (MusicGestures) */
-
-
-@implementation IUNowPlayingAlbumFrontViewController (MusicGestures)
-
--(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity {
-
-  [self performActionForKey:kGestureFrontPinch];
-  
-}
-
-@end /* IUNowPlayingAlbumFrontViewController (MusicGestures) */
-
-
-@implementation IUNowPlayingAlbumBackViewController (MusicGestures)
--(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity {
-
-  [self performActionForKey:kGestureBackPinch];
-
-}
-@end /* IUNowPlayingAlbumBackViewController (MusicGestures) */
 
 
 %hook IUNowPlayingAlbumFrontViewController 
@@ -266,6 +188,42 @@ static void reloadPreferencesCallback(CFNotificationCenterRef center,
 }
 
 %end /* hook IUNowPlayingAlbumBackViewController */
+
+
+%hook MPSwipableView
+
+-(id)initWithFrame:(CGRect)frame {
+
+    id ret = %orig;
+    
+    if (ret) {
+    
+        UIPanGestureRecognizer* panRecognizer = 
+          [[UIPanGestureRecognizer alloc] initWithTarget:self 
+                                          action:@selector(_panGestureRecognized:)];
+        panRecognizer.delegate = self;
+        panRecognizer.cancelsTouchesInView = NO;
+        panRecognizer.delaysTouchesEnded = NO;
+        [self addGestureRecognizer:panRecognizer];
+        [panRecognizer release];
+        
+        UILongPressGestureRecognizer* longPressRecognizer =
+          [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(_longPressGestureRecognized:)];
+                                                
+        longPressRecognizer.delegate = self;
+        longPressRecognizer.cancelsTouchesInView = NO;
+        longPressRecognizer.delaysTouchesEnded = NO;
+        [self addGestureRecognizer:longPressRecognizer];
+        [longPressRecognizer release];
+        
+    }
+    
+    return ret;
+
+}
+
+%end /* hook MPSwipableView */
 
 
 %ctor {
