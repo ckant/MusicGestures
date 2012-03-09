@@ -384,7 +384,6 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
-				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -394,7 +393,6 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
-				<string>7</string>
 			</array>
 		</dict>
 		<dict>
@@ -420,7 +418,6 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
-				<string>Adjust Volume</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -430,7 +427,6 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
-				<string>7</string>
 			</array>
 		</dict>
 		<dict>
