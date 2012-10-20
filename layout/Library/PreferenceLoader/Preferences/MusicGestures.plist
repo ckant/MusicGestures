@@ -44,6 +44,8 @@
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -55,6 +57,8 @@
 				<string>5</string>
 				<string>6</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -82,6 +86,8 @@
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -93,6 +99,8 @@
 				<string>5</string>
 				<string>6</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -120,6 +128,8 @@
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -131,6 +141,8 @@
 				<string>5</string>
 				<string>6</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -158,6 +170,8 @@
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -169,6 +183,8 @@
 				<string>5</string>
 				<string>6</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -195,6 +211,8 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -205,6 +223,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -231,6 +251,8 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -241,6 +263,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -267,6 +291,8 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -277,6 +303,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -303,6 +331,8 @@
 				<string>Flip to Back Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Toggle Info Overlay</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -313,6 +343,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>6</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -341,6 +373,8 @@
 				<string>Toggle Info Overlay</string>
 				<string>Seek Backward</string>
 				<string>Seek Forward</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -353,6 +387,8 @@
 				<string>6</string>
 				<string>8</string>
 				<string>9</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -384,6 +420,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -393,6 +431,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -418,6 +458,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -427,6 +469,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -453,6 +497,8 @@
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -463,6 +509,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -489,6 +537,8 @@
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
 				<string>Adjust Volume</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -499,6 +549,8 @@
 				<string>4</string>
 				<string>5</string>
 				<string>7</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -524,6 +576,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -533,6 +587,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -558,6 +614,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -567,6 +625,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -592,6 +652,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -601,6 +663,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>
@@ -626,6 +690,8 @@
 				<string>Play/Pause</string>
 				<string>Flip to Front Album Cover</string>
 				<string>Exit Now Playing</string>
+				<string>Skip Back 30 Secs</string>
+				<string>Skip Forward 30 Secs</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -635,6 +701,8 @@
 				<string>3</string>
 				<string>4</string>
 				<string>5</string>
+				<string>10</string>
+				<string>11</string>
 			</array>
 		</dict>
 		<dict>

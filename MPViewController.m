@@ -40,7 +40,16 @@
     case MGActionInfoOverlay:
       [self showInfoOverlay];
       break;
+
+    case MGActionThirtySecondSkipBackward:
+      [self skipWithDelta:-30.0];
+      break;
+
+    case MGActionThirtySecondSkipForward:
+      [self skipWithDelta:30.0];
+      break;
       
+    case MGActionNone:
     default:
         break;
       
@@ -50,8 +59,8 @@
 
 -(void)performPanActionForKey:(NSString*)key
        inDirection:(int)direction
-       withDistance:(float)distance
-       withVelocity:(float)velocity {
+       withDistance:(double)distance
+       withVelocity:(double)velocity {
 
   NSNumber* actionNum = [preferencesDict objectForKey:key];
   MGAction action = (MGAction)[actionNum intValue];
@@ -139,8 +148,8 @@
   [self _handleSingleTap];
 }
 
--(void)adjustVolumeBy:(float)delta {
-  [self player].volume = [self player].volume + delta;
+-(void)adjustVolumeBy:(double)delta {
+  [[self player] setVolume:[[self player] volume] + delta];
 }
 
 -(void)beginSeek:(int)direction {
@@ -149,6 +158,10 @@
 
 -(void)endSeek {
   [[self player] endSeek];
+}
+
+-(void)skipWithDelta:(double)delta {
+  [[self player] setCurrentTime:[[self player] currentTime] + delta];
 }
 
 @end /* MPViewController (MusicGestures) */

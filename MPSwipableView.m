@@ -37,7 +37,7 @@ static BOOL validSwipe = YES;
 /**
  * Returns distance panned for direction
  */
--(float)_panDistanceForPoint:(CGPoint)point inDirection:(MGSwipe)direction {
+-(double)_panDistanceForPoint:(CGPoint)point inDirection:(MGSwipe)direction {
 
     if (direction == MGSwipeLeft || direction == MGSwipeRight) {
         return point.x;
@@ -51,7 +51,7 @@ static BOOL validSwipe = YES;
 /**
  * Returns velocity panned for direction
  */
--(float)_panVelocityForPoint:(CGPoint)point inDirection:(MGSwipe)direction {
+-(double)_panVelocityForPoint:(CGPoint)point inDirection:(MGSwipe)direction {
 
     if (direction == MGSwipeLeft || direction == MGSwipeRight) {
         return point.x;

@@ -12,6 +12,6 @@
 -(void)_panGestureRecognized:(id)recognized;
 -(void)_longPressGestureRecognized:(id)recognized;
 -(MGSwipe)_panDirectionForPoint:(CGPoint)point;
--(float)_panDistanceForPoint:(CGPoint)point inDirection:(MGSwipe)direction;
--(float)_panVelocityForPoint:(CGPoint)point inDirection:(MGSwipe)direction;
+-(double)_panDistanceForPoint:(CGPoint)point inDirection:(MGSwipe)direction;
+-(double)_panVelocityForPoint:(CGPoint)point inDirection:(MGSwipe)direction;
 @end

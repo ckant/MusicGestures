@@ -15,8 +15,8 @@
 -(void)performActionForKey:(NSString*)key;
 -(void)performPanActionForKey:(NSString*)key
        inDirection:(int)direction
-       withDistance:(float)distance
-       withVelocity:(float)velocity;
+       withDistance:(double)distance
+       withVelocity:(double)velocity;
 -(void)performLongPressBeginActionForKey:(NSString*)key;
 -(void)performLongPressEndActionForKey:(NSString*)key;
        
@@ -26,7 +26,7 @@
 -(void)flip;
 -(void)exitNowPlaying;
 -(void)showInfoOverlay;
--(void)adjustVolumeBy:(float)delta;
+-(void)adjustVolumeBy:(double)delta;
 -(void)beginSeek:(int)direction;
 -(void)endSeek;
 -(IUiPodAVController*)player;

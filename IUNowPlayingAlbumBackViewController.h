@@ -8,9 +8,9 @@
 @end
 
 @interface IUNowPlayingAlbumBackViewController (MusicGestures)
--(void)swipableView:(id)view pinchedToScale:(float)scale withVelocity:(float)velocity;
+-(void)swipableView:(id)view pinchedToScale:(double)scale withVelocity:(double)velocity;
 -(void)swipableView:(id)view 
        pannedInDirection:(int)direction 
-       withDistance:(float)distance 
-       withVelocity:(float)velocity;
+       withDistance:(double)distance 
+       withVelocity:(double)velocity;
 @end

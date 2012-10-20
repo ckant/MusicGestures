@@ -18,6 +18,7 @@ typedef enum {
 } MGSwipe;
 
 typedef enum {
+  MGTapNone   = 0,
   MGTapSingle = 1,
   MGTapDouble = 2,
   MGTapTriple = 3,
@@ -30,15 +31,18 @@ typedef enum {
 } MGShuffleType;
 
 typedef enum {
-  MGActionPrevTrack       = 1,
-  MGActionNextTrack       = 2,
-  MGActionTogglePlayback  = 3,
-  MGActionFlip            = 4,
-  MGActionExitNowPlaying  = 5,
-  MGActionInfoOverlay     = 6,
-  MGActionAdjustVolume    = 7,
-  MGActionSeekBackward    = 8,
-  MGActionSeekForward     = 9,
+  MGActionNone                     = 0,
+  MGActionPrevTrack                = 1,
+  MGActionNextTrack                = 2,
+  MGActionTogglePlayback           = 3,
+  MGActionFlip                     = 4,
+  MGActionExitNowPlaying           = 5,
+  MGActionInfoOverlay              = 6,
+  MGActionAdjustVolume             = 7,
+  MGActionSeekBackward             = 8,
+  MGActionSeekForward              = 9,
+  MGActionThirtySecondSkipBackward = 10,
+  MGActionThirtySecondSkipForward  = 11,
 } MGAction;
 
 extern NSString* const kGestureFrontSwipeUp;
