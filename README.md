@@ -1,6 +1,6 @@
 ![MusicGestures Logo](https://raw.github.com/ckant/MusicGestures/master/layout/Library/PreferenceLoader/Preferences/MusicGestures.png) MusicGestures
 =============
-### Adds Gesture Support to the Now Playing Screen of the iOS Music App
+### Adds Customizable Gestures to the iOS Music App
 
 *Customizable from settings:*
 
