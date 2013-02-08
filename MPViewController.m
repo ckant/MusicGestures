@@ -137,7 +137,12 @@
 }
 
 -(void)flip {
-  [[self delegate] flip:self];
+  // Method signature changed in iOS 6
+  if ([[self delegate] respondsToSelector:@selector(_flip)]) {
+    [[self delegate] _flip]; // iOS 6
+  } else {
+    [[self delegate] flip:self]; // iOS 4,5
+  }
 }
 
 -(void)exitNowPlaying {
