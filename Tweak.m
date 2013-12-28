@@ -6,11 +6,6 @@
  */
 
 #import "MusicGestures.h"
-#import "MPViewController.h"
-#import "MPSwipableView.h"
-#import "IUNowPlayingAlbumFrontViewController.h"
-#import "IUNowPlayingAlbumBackViewController.h"
-
 
 #define kDefaultsFilename \
   [NSHomeDirectory() stringByAppendingPathComponent:\
@@ -34,17 +29,8 @@ NSString* const kGestureFrontPinch      = @"frontPinch";
 
 NSString* const kGestureFrontLongPress  = @"frontLongPress";
 
-NSString* const kGestureBackSwipeUp     = @"backSwipeUp";
-NSString* const kGestureBackSwipeDown   = @"backSwipeDown";
-NSString* const kGestureBackSwipeLeft   = @"backSwipeLeft";
-NSString* const kGestureBackSwipeRight  = @"backSwipeRight";
-
-NSString* const kGestureBackTapSingle   = @"backTapSingle";
-NSString* const kGestureBackTapDouble   = @"backTapDouble";
-NSString* const kGestureBackTapTriple   = @"backTapTriple";
-
-NSString* const kGestureBackPinch       = @"backPinch";
-
+/* Intervals */
+NSString* const kFrontSkipLength        = @"frontSkipLength";
 
 /**
  * Creates a dictionary with defaults
@@ -56,12 +42,10 @@ static void initDefaultPreferences() {
     /* Front defaults */
     [NSString stringWithFormat:@"%d", MGActionNextTrack], kGestureFrontSwipeLeft,
     [NSString stringWithFormat:@"%d", MGActionPrevTrack], kGestureFrontSwipeRight,
-    [NSString stringWithFormat:@"%d", MGActionInfoOverlay], kGestureFrontTapSingle,
+    [NSString stringWithFormat:@"%d", MGActionShowLyricsOrRating], kGestureFrontTapSingle,
     [NSString stringWithFormat:@"%d", MGActionTogglePlayback], kGestureFrontTapDouble,
-    
-    /* Back defaults */
-    [NSString stringWithFormat:@"%d", MGActionNextTrack], kGestureBackSwipeLeft,
-    [NSString stringWithFormat:@"%d", MGActionPrevTrack], kGestureBackSwipeRight,
+
+    [NSString stringWithFormat:@"%d", 30], kFrontSkipLength,
     
     nil];
 
@@ -88,142 +72,24 @@ static void reloadPreferences() {
  * Called when preferences are changed
  */
 static void reloadPreferencesCallback(CFNotificationCenterRef center, 
-                              void* observer, CFStringRef name, 
-                              const void* object, CFDictionaryRef userInfo) {
+                                      void* observer, CFStringRef name, 
+                                      const void* object, CFDictionaryRef userInfo) {
   reloadPreferences();
 }
 
 
-%hook IUNowPlayingAlbumFrontViewController 
+%hook MusicNowPlayingViewController
 
--(void)swipableView:(id)view swipedInDirection:(int)direction {
+-(id)_createContentViewForItem:(id)item contentViewController:(id*)contentViewController {
+  id contentView = %orig;
 
-  switch(direction) {
-  
-    case MGSwipeUp:
-      [self performActionForKey:kGestureFrontSwipeUp];
-      break;
-      
-    case MGSwipeDown:
-      [self performActionForKey:kGestureFrontSwipeDown];
-      break;
-    
-    case MGSwipeLeft:
-      [self performActionForKey:kGestureFrontSwipeLeft];
-      break;
-    
-    case MGSwipeRight:
-      [self performActionForKey:kGestureFrontSwipeRight];
-      break;
-  }
-                 
+  // Hook to add custom gesture recognizers to the content view
+  [self addGestureRecognizersToContentView:contentView];
+
+  return contentView;
 }
 
--(void)swipableView:(id)view tappedWithCount:(unsigned)count {
-
-  switch(count) {
-  
-    case MGTapSingle:
-      [self performActionForKey:kGestureFrontTapSingle];
-      break;
-      
-    case MGTapDouble:
-      [self performActionForKey:kGestureFrontTapDouble];
-      break;
-      
-    case MGTapTriple:
-      [self performActionForKey:kGestureFrontTapTriple];
-      break;
-  
-  }
-                 
-}
-
-%end /* hook IUNowPlayingAlbumFrontViewController */
-
-
-%hook IUNowPlayingAlbumBackViewController 
-
--(void)swipableView:(id)view swipedInDirection:(int)direction {
-
-  switch(direction) {
-  
-    case MGSwipeUp:
-      [self performActionForKey:kGestureBackSwipeUp];
-      break;
-      
-    case MGSwipeDown:
-      [self performActionForKey:kGestureBackSwipeDown];
-      break;
-    
-    case MGSwipeLeft:
-      [self performActionForKey:kGestureBackSwipeLeft];
-      break;
-    
-    case MGSwipeRight:
-      [self performActionForKey:kGestureBackSwipeRight];
-      break;
-  }
-                 
-}
-
--(void)swipableView:(id)view tappedWithCount:(unsigned)count {
-
-  switch(count) {
-  
-    case MGTapSingle:
-      [self performActionForKey:kGestureBackTapSingle];
-      break;
-      
-    case MGTapDouble:
-      [self performActionForKey:kGestureBackTapDouble];
-      break;
-      
-    case MGTapTriple:
-      [self performActionForKey:kGestureBackTapTriple];
-      break;
-  
-  }
-
-}
-
-%end /* hook IUNowPlayingAlbumBackViewController */
-
-
-%hook MPSwipableView
-
--(id)initWithFrame:(CGRect)frame {
-
-    id ret = %orig;
-    
-    if (ret) {
-    
-        UIPanGestureRecognizer* panRecognizer = 
-          [[UIPanGestureRecognizer alloc] initWithTarget:self 
-                                          action:@selector(_panGestureRecognized:)];
-        panRecognizer.delegate = self;
-        panRecognizer.cancelsTouchesInView = NO;
-        panRecognizer.delaysTouchesEnded = NO;
-        [self addGestureRecognizer:panRecognizer];
-        [panRecognizer release];
-        
-        UILongPressGestureRecognizer* longPressRecognizer =
-          [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                action:@selector(_longPressGestureRecognized:)];
-                                                
-        longPressRecognizer.delegate = self;
-        longPressRecognizer.cancelsTouchesInView = NO;
-        longPressRecognizer.delaysTouchesEnded = NO;
-        [self addGestureRecognizer:longPressRecognizer];
-        [longPressRecognizer release];
-        
-    }
-    
-    return ret;
-
-}
-
-%end /* hook MPSwipableView */
+%end // MusicNowPlayingViewController
 
 
 %ctor {

@@ -6,9 +6,6 @@
 
 **Now Playing Screen**
 
-* Front Album Cover (Main Track Screen)
-* Back Album Cover (Album Tracks Screen)
-
 **Gestures**
 
 * Swipe (Up/Down/Left/Right)
@@ -21,12 +18,10 @@
 * Previous Track
 * Next Track
 * Play/Pause
-* Flip Album Cover
-* Exit Now Playing Screen
-* Toggle Info Overlay
-* Adjust Volume
-* Skip Back 30 Secs
-* Skip Forward 30 Secs
+* Show Flipside
+* Show Lyrics/Rating
+* Skip Backwards
+* Skip Forwards
 
 Screenshots
 -----------------

@@ -5,44 +5,19 @@
  * Date:   2012
  */
 
-
-
-#import <MediaPlayer/MPAVController.h>
-
 typedef enum {
-  MGSwipeNone  = 0,
-  MGSwipeUp    = 1,
-  MGSwipeDown  = 2,
-  MGSwipeLeft  = 3,
-  MGSwipeRight = 4,
-} MGSwipe;
-
-typedef enum {
-  MGTapNone   = 0,
-  MGTapSingle = 1,
-  MGTapDouble = 2,
-  MGTapTriple = 3,
-} MGTap;
-
-typedef enum {
-  MGShuffleTypeOff    = 0,
-  MGShuffleTypeSongs  = 1,
-  MGShuffleTypeAlbums = 2,
-} MGShuffleType;
-
-typedef enum {
-  MGActionNone                     = 0,
-  MGActionPrevTrack                = 1,
-  MGActionNextTrack                = 2,
-  MGActionTogglePlayback           = 3,
-  MGActionFlip                     = 4,
-  MGActionExitNowPlaying           = 5,
-  MGActionInfoOverlay              = 6,
-  MGActionAdjustVolume             = 7,
-  MGActionSeekBackward             = 8,
-  MGActionSeekForward              = 9,
-  MGActionThirtySecondSkipBackward = 10,
-  MGActionThirtySecondSkipForward  = 11,
+  MGActionNone               = 0,
+  MGActionPrevTrack          = 1,
+  MGActionNextTrack          = 2,
+  MGActionTogglePlayback     = 3,
+  MGActionShowFlipside       = 4,
+  MGActionExitNowPlaying     = 5, // Unused
+  MGActionShowLyricsOrRating = 6,
+  MGActionAdjustVolume       = 7, // Unused
+  MGActionSeekBackward       = 8,
+  MGActionSeekForward        = 9,
+  MGActionSkipBackward       = 10,
+  MGActionSkipForward        = 11,
 } MGAction;
 
 extern NSString* const kGestureFrontSwipeUp;
@@ -58,15 +33,6 @@ extern NSString* const kGestureFrontPinch;
 
 extern NSString* const kGestureFrontLongPress;
 
-extern NSString* const kGestureBackSwipeUp;
-extern NSString* const kGestureBackSwipeDown;
-extern NSString* const kGestureBackSwipeLeft;
-extern NSString* const kGestureBackSwipeRight;
-
-extern NSString* const kGestureBackTapSingle;
-extern NSString* const kGestureBackTapDouble;
-extern NSString* const kGestureBackTapTriple;
-
-extern NSString* const kGestureBackPinch;
+extern NSString* const kFrontSkipLength;
 
 extern NSMutableDictionary* preferencesDict;

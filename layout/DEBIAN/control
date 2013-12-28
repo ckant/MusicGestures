@@ -2,8 +2,8 @@ Package: com.ckant.musicgestures
 Conflicts: com.ckant.swipablemusic
 Replaces: com.ckant.swipablemusic
 Name: MusicGestures
-Depends: firmware (>= 4.0), mobilesubstrate, preferenceloader
-Version: 1.3
+Depends: firmware (>= 7.0), mobilesubstrate, preferenceloader
+Version: 1.4
 Architecture: iphoneos-arm
 Description: Adds Gestures to the iOS Music App
 Maintainer: thebigboss.org <http://thebigboss.org>
