@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = MusicGestures;
+	cell = PSLinkCell;
+	detail = MusicGesturesPSListController;
+	icon = MusicGestures.png;
+	isController = 1;
+	label = MusicGestures;
+    };
+}

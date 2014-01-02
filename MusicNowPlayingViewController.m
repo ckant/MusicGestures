@@ -6,13 +6,23 @@
  */
  
 #import "MusicGestures.h"
-#import "MusicNowPlayingViewController+MusicGestures.h"
+#import "MusicNowPlayingViewController.h"
 
-@implementation MusicNowPlayingViewController (MusicGestures)
+%hook MusicNowPlayingViewController
+
+-(id)_createContentViewForItem:(id)item contentViewController:(id*)contentViewController {
+  id contentView = %orig;
+
+  // Hook to add custom gesture recognizers to the content view
+  [self addGestureRecognizersToContentView:contentView];
+
+  return contentView;
+}
 
 /**
  * Album art / lyrics view
  */
+%new
 -(UIView*)contentView {
   return [self valueForKey:@"_contentView"];
 }
@@ -20,10 +30,12 @@
 /**
  * Audio/Video player
  */
+%new
 -(MPAVController*)player {
   return [[self valueForKey:@"_playbackControlsView"] valueForKey:@"_player"];
 }
 
+%new
 -(void)handleSwipe:(UISwipeGestureRecognizer*)swipeGestureRecognizer {
   switch(swipeGestureRecognizer.direction) {
     case UISwipeGestureRecognizerDirectionRight:
@@ -44,18 +56,22 @@
   }
 }
 
+%new
 -(void)handleTapSingle:(UITapGestureRecognizer*)tapGestureRecognizer {
   [self performActionForKey:kGestureFrontTapSingle];
 }
 
+%new
 -(void)handleTapDouble:(UITapGestureRecognizer*)tapGestureRecognizer {
   [self performActionForKey:kGestureFrontTapDouble];
 }
 
+%new
 -(void)handleTapTriple:(UITapGestureRecognizer*)tapGestureRecognizer {
   [self performActionForKey:kGestureFrontTapTriple];
 }
 
+%new
 -(void)handleLongPress:(UILongPressGestureRecognizer*)longPressGestureRecognizer {
   switch(longPressGestureRecognizer.state) {
     case UIGestureRecognizerStateBegan:
@@ -68,10 +84,12 @@
   }
 }
 
+%new
 -(void)handlePinch:(UIPinchGestureRecognizer*)pinchGestureRecognizer {
   [self performActionForKey:kGestureFrontPinch];
 }
 
+%new
 -(void)performActionForKey:(NSString*)key {
 
   NSNumber* actionNum = [preferencesDict objectForKey:key];
@@ -115,6 +133,7 @@
   
 }
 
+%new
 -(void)performLongPressBeginActionForKey:(NSString*)key {
 
   NSNumber* actionNum = [preferencesDict objectForKey:key];
@@ -138,6 +157,7 @@
 
 }
 
+%new
 -(void)performLongPressEndActionForKey:(NSString*)key {
 
   NSNumber* actionNum = [preferencesDict objectForKey:key];
@@ -157,18 +177,22 @@
 
 }
 
+%new
 -(void)prevTrack {
   [[self player] changePlaybackIndexBy:-1];
 }
 
+%new
 -(void)nextTrack {
   [[self player] changePlaybackIndexBy:1];
 }
 
+%new
 -(void)togglePlayback {
   [[self player] togglePlayback];
 }
 
+%new
 -(void)showFlipside {
   [self _flipsideAction:nil];
 }
@@ -176,32 +200,39 @@
 /**
  * Toggle lyrics view if available, else ratings view
  */
+%new
 -(void)showLyricsOrRating {
   [self _tapAction:nil];
 }
 
+%new
 -(void)adjustVolumeBy:(double)delta {
   [self player].volume = [self player].volume + delta;
 }
 
+%new
 -(void)beginSeek:(int)direction {
   [[self player] beginSeek:direction];
 }
 
+%new
 -(void)endSeek {
   [[self player] endSeek];
 }
 
+%new
 -(void)skipForward {
   int delta = [[preferencesDict objectForKey:kFrontSkipLength] intValue];
   [self player].currentTime = [self player].currentTime + delta;
 }
 
+%new
 -(void)skipBackward {
   int delta = [[preferencesDict objectForKey:kFrontSkipLength] intValue];
   [self player].currentTime = [self player].currentTime - delta;
 }
 
+%new
 -(void)addGestureRecognizersToContentView:(id)contentView {
   // Add triple tap
   UITapGestureRecognizer* tapTripleRecognizer =
@@ -277,4 +308,4 @@
 }
 
 
-@end /* MPViewController (MusicGestures) */
+%end

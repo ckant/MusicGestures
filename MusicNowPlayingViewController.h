@@ -6,16 +6,9 @@
  */
 
 #import "MusicGestures.h"
+#import "MPAVController.h"
 
-@interface MPAVController
-@property (assign,nonatomic) double currentTime;
-@property (assign,nonatomic) float volume;
-@end
-
-@interface MusicNowPlayingViewController
-@end
-
-@interface MusicNowPlayingViewController (MusicGestures)
+@interface MusicNowPlayingViewController 
 
 // Gesture recognizer actions
 -(void)handleSwipe:(UISwipeGestureRecognizer*)swipeGestureRecognizer;

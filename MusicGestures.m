@@ -6,6 +6,12 @@
  */
 
 #import "MusicGestures.h"
+ 
+#import "legacy/MPViewController.h"
+#import "legacy/MPSwipableView.h"
+#import "legacy/IUNowPlayingAlbumFrontViewController.h"
+#import "legacy/IUNowPlayingAlbumBackViewController.h"
+
 
 #define kDefaultsFilename \
   [NSHomeDirectory() stringByAppendingPathComponent:\
@@ -29,6 +35,17 @@ NSString* const kGestureFrontPinch      = @"frontPinch";
 
 NSString* const kGestureFrontLongPress  = @"frontLongPress";
 
+NSString* const kGestureBackSwipeUp     = @"backSwipeUp";
+NSString* const kGestureBackSwipeDown   = @"backSwipeDown";
+NSString* const kGestureBackSwipeLeft   = @"backSwipeLeft";
+NSString* const kGestureBackSwipeRight  = @"backSwipeRight";
+
+NSString* const kGestureBackTapSingle   = @"backTapSingle";
+NSString* const kGestureBackTapDouble   = @"backTapDouble";
+NSString* const kGestureBackTapTriple   = @"backTapTriple";
+
+NSString* const kGestureBackPinch       = @"backPinch";
+
 /* Intervals */
 NSString* const kFrontSkipLength        = @"frontSkipLength";
 
@@ -44,6 +61,10 @@ static void initDefaultPreferences() {
     [NSString stringWithFormat:@"%d", MGActionPrevTrack], kGestureFrontSwipeRight,
     [NSString stringWithFormat:@"%d", MGActionShowLyricsOrRating], kGestureFrontTapSingle,
     [NSString stringWithFormat:@"%d", MGActionTogglePlayback], kGestureFrontTapDouble,
+
+    /* Back defaults */
+    [NSString stringWithFormat:@"%d", MGActionNextTrack], kGestureBackSwipeLeft,
+    [NSString stringWithFormat:@"%d", MGActionPrevTrack], kGestureBackSwipeRight,
 
     [NSString stringWithFormat:@"%d", 30], kFrontSkipLength,
     
@@ -76,21 +97,6 @@ static void reloadPreferencesCallback(CFNotificationCenterRef center,
                                       const void* object, CFDictionaryRef userInfo) {
   reloadPreferences();
 }
-
-
-%hook MusicNowPlayingViewController
-
--(id)_createContentViewForItem:(id)item contentViewController:(id*)contentViewController {
-  id contentView = %orig;
-
-  // Hook to add custom gesture recognizers to the content view
-  [self addGestureRecognizersToContentView:contentView];
-
-  return contentView;
-}
-
-%end // MusicNowPlayingViewController
-
 
 %ctor {
 

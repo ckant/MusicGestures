@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>label</key>
+			<string>Front Album Cover</string>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontSwipeUp</string>
+			<key>label</key>
+			<string>Swipe Up</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontSwipeDown</string>
+			<key>label</key>
+			<string>Swipe Down</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>2</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontSwipeLeft</string>
+			<key>label</key>
+			<string>Swipe Left</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>1</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontSwipeRight</string>
+			<key>label</key>
+			<string>Swipe Right</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>6</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontTapSingle</string>
+			<key>label</key>
+			<string>Single Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>3</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontTapDouble</string>
+			<key>label</key>
+			<string>Double Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontTapTriple</string>
+			<key>label</key>
+			<string>Triple Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontPinch</string>
+			<key>label</key>
+			<string>Pinch</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>frontLongPress</string>
+			<key>label</key>
+			<string>Press And Hold</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Back Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Toggle Info Overlay</string>
+				<string>Seek Backward</string>
+				<string>Seek Forward</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>6</string>
+				<string>8</string>
+				<string>9</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>Back Album Cover</string>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backSwipeUp</string>
+			<key>label</key>
+			<string>Swipe Up</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backSwipeDown</string>
+			<key>label</key>
+			<string>Swipe Down</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>2</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backSwipeLeft</string>
+			<key>label</key>
+			<string>Swipe Left</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>1</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backSwipeRight</string>
+			<key>label</key>
+			<string>Swipe Right</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backTapSingle</string>
+			<key>label</key>
+			<string>Single Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backTapDouble</string>
+			<key>label</key>
+			<string>Double Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backTapTriple</string>
+			<key>label</key>
+			<string>Triple Tap</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>0</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backPinch</string>
+			<key>label</key>
+			<string>Pinch</string>
+			<key>validTitles</key>
+			<array>
+				<string>Disabled</string>
+				<string>Previous Track</string>
+				<string>Next Track</string>
+				<string>Play/Pause</string>
+				<string>Flip to Front Album Cover</string>
+				<string>Exit Now Playing</string>
+				<string>Skip Backward</string>
+				<string>Skip Forward</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+				<string>5</string>
+				<string>10</string>
+				<string>11</string>
+			</array>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>Seconds To Skip Forward/Backward</string>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.ckant.musicgestures.updatePrefs</string>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>detail</key>
+			<string>PSDetailController</string>
+			<key>default</key>
+			<string>30</string>
+			<key>defaults</key>
+			<string>com.ckant.musicgestures</string>
+			<key>key</key>
+			<string>frontSkipLength</string>
+			<key>label</key>
+			<string></string>
+			<key>isNumeric</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>footerText</key>
+			<string>MusicGestures © 2012 Chris Kant github.com/ckant</string>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>MusicGestures</string>
+</dict>
+</plist>

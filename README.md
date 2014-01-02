@@ -36,4 +36,4 @@ Screenshots
 
 [Download](http://apt.thebigboss.org/onepackage.php?bundleid=com.ckant.musicgestures&db=) @ the BigBoss Cydia Repository
 -------------
-**Compatible with iOS 4, 5, 6**
+**Compatible with iOS 4, 5, 6, 7**
