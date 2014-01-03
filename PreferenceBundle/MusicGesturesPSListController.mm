@@ -12,11 +12,11 @@
 -(id)loadSpecifiersFromPlistName:(NSString*)name target:(id)target;
 @end
 
-@interface MusicGesturesPreferenceBundleListController : PSListController
+@interface MusicGesturesPSListController : PSListController
 -(bool)isLegacy;
 @end
 
-@implementation MusicGesturesPreferenceBundleListController
+@implementation MusicGesturesPSListController
 -(id)specifiers {
   if (_specifiers == nil) {
     if ([self isLegacy]) {
