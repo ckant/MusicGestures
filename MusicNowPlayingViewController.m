@@ -234,25 +234,37 @@
 
 %new
 -(void)addGestureRecognizersToContentView:(id)contentView {
+  // Remove all gesture recognizers
+  while ([[contentView gestureRecognizers] count] > 0) {
+    [contentView removeGestureRecognizer:[[contentView gestureRecognizers] objectAtIndex:0]];
+  }
+
   // Add triple tap
   UITapGestureRecognizer* tapTripleRecognizer =
-          [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTriple:)];             
+          [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTriple:)];
   tapTripleRecognizer.delegate = (id)self;
   tapTripleRecognizer.numberOfTapsRequired = 3;
   [contentView addGestureRecognizer:tapTripleRecognizer];
   [tapTripleRecognizer release];
 
-  // Customize double tap; this toggles the flipside view by default
-  UITapGestureRecognizer* tapDoubleRecognizer = [contentView gestureRecognizers][0];
-  [tapDoubleRecognizer removeTarget:nil action:NULL];
-  [tapDoubleRecognizer addTarget:self action:@selector(handleTapDouble:)];
+  // Add double tap; this toggles the flipside view by default
+  UITapGestureRecognizer* tapDoubleRecognizer =
+          [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapDouble:)];
+  tapDoubleRecognizer.delegate = (id)self;
+  tapDoubleRecognizer.numberOfTapsRequired = 2;
+  [contentView addGestureRecognizer:tapDoubleRecognizer];
   [tapDoubleRecognizer requireGestureRecognizerToFail:tapTripleRecognizer];
+  [tapDoubleRecognizer release];
 
-  // Customize single tap; this toggles the lyrics/ratings view by default
-  UITapGestureRecognizer* tapSingleRecognizer = [contentView gestureRecognizers][1];
-  [tapSingleRecognizer removeTarget:nil action:NULL];
-  [tapSingleRecognizer addTarget:self action:@selector(handleTapSingle:)];
+  // Add single tap; this toggles the lyrics/ratings view by default
+  UITapGestureRecognizer* tapSingleRecognizer =
+          [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapSingle:)];
+  tapSingleRecognizer.delegate = (id)self;
+  tapSingleRecognizer.numberOfTapsRequired = 1;
+  [contentView addGestureRecognizer:tapSingleRecognizer];
   [tapSingleRecognizer requireGestureRecognizerToFail:tapTripleRecognizer];
+  [tapSingleRecognizer requireGestureRecognizerToFail:tapDoubleRecognizer];
+  [tapSingleRecognizer release];
 
   // Add long press
   UILongPressGestureRecognizer* longPressRecognizer =
