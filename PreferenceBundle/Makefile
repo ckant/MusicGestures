@@ -1,3 +1,6 @@
+TARGET=:clang
+ARCHS = armv7 armv7s arm64
+
 include theos/makefiles/common.mk
 
 BUNDLE_NAME = MusicGestures
@@ -5,7 +8,6 @@ MusicGestures_FILES = MusicGesturesPSListController.mm
 MusicGestures_INSTALL_PATH = /Library/PreferenceBundles
 MusicGestures_FRAMEWORKS = UIKit
 MusicGestures_PRIVATE_FRAMEWORKS = Preferences
-MusicGestures_SHARED_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

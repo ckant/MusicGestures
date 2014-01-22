@@ -1,4 +1,7 @@
 
+TARGET=:clang
+ARCHS = armv7 armv7s arm64
+
 all::
 	logos/logos_preprocess.sh
 
