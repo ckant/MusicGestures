@@ -6,5 +6,8 @@
  */
 
 @protocol MPSwipableViewDelegate
+ 
+-(void)swipableView:(id)view longPressedInState:(UIGestureRecognizerState)state;
+
 @end
  

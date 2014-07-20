@@ -37,6 +37,10 @@
 
 %new
 -(void)handleSwipe:(UISwipeGestureRecognizer*)swipeGestureRecognizer {
+  if (swipeGestureRecognizer.state != UIGestureRecognizerStateEnded) {
+    return;
+  }
+
   switch(swipeGestureRecognizer.direction) {
     case UISwipeGestureRecognizerDirectionRight:
       [self performActionForKey:kGestureFrontSwipeRight];
@@ -179,7 +183,13 @@
 
 %new
 -(void)prevTrack {
-  [[self player] changePlaybackIndexBy:-1];
+  MusicAVPlayer *workingPlayer = [%c(MusicAVPlayer) sharedAVPlayer];
+
+  NSError *prevError;
+  [workingPlayer changePlaybackIndexBy:-1 deltaType:0 ignoreElapsedTime:YES allowSkippingUnskippableContent:YES error:&prevError];
+
+ // [workingPlayer changePlaybackIndexBy:-1];
+ // [[self player] changePlaybackIndexBy:-1];
 }
 
 %new
@@ -206,7 +216,7 @@
 }
 
 %new
--(void)adjustVolumeBy:(double)delta {
+-(void)adjustVolumeBy:(CGFloat)delta {
   [self player].volume = [self player].volume + delta;
 }
 

@@ -7,6 +7,7 @@
  
 #import "MusicGestures.h"
 #import "legacy/MPViewController.h"
+#import "MPUNowPlayingDelegate.h"
 
 %hook MPViewController
 
@@ -61,8 +62,8 @@
 %new
 -(void)performPanActionForKey:(NSString*)key
        inDirection:(int)direction
-       withDistance:(double)distance
-       withVelocity:(double)velocity {
+       withDistance:(CGFloat)distance
+       withVelocity:(CGFloat)velocity {
 
   NSNumber* actionNum = [preferencesDict objectForKey:key];
   MGAction action = (MGAction)[actionNum intValue];
@@ -164,7 +165,7 @@
 }
 
 %new
--(void)adjustVolumeBy:(double)delta {
+-(void)adjustVolumeBy:(CGFloat)delta {
   [[self player] setVolume:[[self player] volume] + delta];
 }
 

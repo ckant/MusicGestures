@@ -5,6 +5,8 @@
  * Date:   2012
  */
 
+#import <UIKit/UIKit.h>
+
 typedef enum {
   MGSwipeNone  = 0,
   MGSwipeUp    = 1,
