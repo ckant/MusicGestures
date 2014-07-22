@@ -183,13 +183,7 @@
 
 %new
 -(void)prevTrack {
-  MusicAVPlayer *workingPlayer = [%c(MusicAVPlayer) sharedAVPlayer];
-
-  NSError *prevError;
-  [workingPlayer changePlaybackIndexBy:-1 deltaType:0 ignoreElapsedTime:YES allowSkippingUnskippableContent:YES error:&prevError];
-
- // [workingPlayer changePlaybackIndexBy:-1];
- // [[self player] changePlaybackIndexBy:-1];
+  [[self player] changePlaybackIndexBy:-1];
 }
 
 %new

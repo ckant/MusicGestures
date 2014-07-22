@@ -11,11 +11,11 @@
 @property (assign,nonatomic) CGFloat volume;
 
 -(void)togglePlayback;
--(void)changePlaybackIndexBy:(int)by;
--(void)beginSeek:(int)seek;
+-(void)changePlaybackIndexBy:(NSInteger)by;
+-(void)beginSeek:(NSInteger)seek;
 -(void)endSeek;
 
-- (BOOL)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingUnskippableContent:(BOOL)arg4 error:(id*)arg5;
+- (BOOL)changePlaybackIndexBy:(NSInteger)arg1 deltaType:(NSInteger)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingUnskippableContent:(BOOL)arg4 error:(id*)arg5;
 
 @end
 
