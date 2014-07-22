@@ -7,10 +7,13 @@
 
 #import "MusicGestures.h"
 #import "MPAVController.h"
+#import "MusicNowPlayingViewController.h"
 
-@interface IUiPodAVController : MPAVController {}
+@interface IUiPodAVController : MPAVController
+
 @end
 
-@interface MPViewController
+@interface MPViewController : MusicNowPlayingViewController
+
 @end
 

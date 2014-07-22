@@ -37,6 +37,10 @@
 
 %new
 -(void)handleSwipe:(UISwipeGestureRecognizer*)swipeGestureRecognizer {
+  if (swipeGestureRecognizer.state != UIGestureRecognizerStateEnded) {
+    return;
+  }
+
   switch(swipeGestureRecognizer.direction) {
     case UISwipeGestureRecognizerDirectionRight:
       [self performActionForKey:kGestureFrontSwipeRight];
@@ -206,7 +210,7 @@
 }
 
 %new
--(void)adjustVolumeBy:(double)delta {
+-(void)adjustVolumeBy:(CGFloat)delta {
   [self player].volume = [self player].volume + delta;
 }
 

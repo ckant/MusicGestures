@@ -6,8 +6,11 @@
  */
  
 #import "MusicGestures.h"
+#import "MPSwipableViewDelegate.h"
 
-@interface MPSwipableView
-@property id swipeDelegate;
+@interface MPSwipableView : UIView
+
+@property (nonatomic, retain) id<MPSwipableViewDelegate> swipeDelegate;
+
 @end
 

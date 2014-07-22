@@ -5,12 +5,8 @@
  * Date:   2012
  */
 
-@interface PSListController {
-  id _specifiers;
-}
--(id)specifiers;
--(id)loadSpecifiersFromPlistName:(NSString*)name target:(id)target;
-@end
+#import <UIKit/UIKit.h>
+#import <Preferences/Preferences.h>
 
 @interface MusicGesturesPSListController : PSListController
 -(bool)isLegacy;

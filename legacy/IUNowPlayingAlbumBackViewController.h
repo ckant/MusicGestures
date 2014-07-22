@@ -10,5 +10,13 @@
 #import "MPSwipableViewDelegate.h"
 
 @interface IUNowPlayingAlbumBackViewController : MPViewController <MPSwipableViewDelegate>
-@end
 
+-(void)performActionForKey:(NSString*)key;
+
+-(void)swipableView:(id)view swipedInDirection:(int)direction;
+-(void)swipableView:(id)view tappedWithCount:(unsigned)count;
+
+-(void)swipableView:(id)view pinchedToScale:(CGFloat)scale withVelocity:(CGFloat)velocity;
+-(void)swipableView:(id)view pannedInDirection:(int)direction withDistance:(CGFloat)distance withVelocity:(CGFloat)velocity;
+
+@end

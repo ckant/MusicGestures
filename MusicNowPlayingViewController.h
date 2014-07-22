@@ -6,9 +6,12 @@
  */
 
 #import "MusicGestures.h"
+#import "MPUNowPlayingDelegate.h"
 #import "MPAVController.h"
 
-@interface MusicNowPlayingViewController 
+@interface MusicNowPlayingViewController : UIViewController
+
+@property(nonatomic, retain) id<MPUNowPlayingDelegate> delegate;
 
 // Gesture recognizer actions
 -(void)handleSwipe:(UISwipeGestureRecognizer*)swipeGestureRecognizer;
@@ -23,6 +26,8 @@
 -(void)performLongPressBeginActionForKey:(NSString*)key;
 -(void)performLongPressEndActionForKey:(NSString*)key;
 
+-(void)performPanActionForKey:(NSString*)key inDirection:(int)direction withDistance:(CGFloat)distance withVelocity:(CGFloat)velocity;
+
 // Actions
 -(void)prevTrack;
 -(void)nextTrack;
@@ -36,10 +41,18 @@
 -(void)skipBackward;
 
 // Convenience getters to manipulate state from within this controller
--(MPAVController*)player;
+-(MusicAVPlayer*)player;
 -(UIView*)contentView;
 
 // Hook to add/modify gesture recognizers for the content view
 -(void)addGestureRecognizersToContentView:(id)contentView;
+
+-(void)_flipsideAction:(id)arg1;
+-(void)_tapAction:(id)arg1;
+
+-(void)flip;
+-(void)exitNowPlaying;
+-(void)showInfoOverlay;
+-(void)_handleSingleTap;
 
 @end

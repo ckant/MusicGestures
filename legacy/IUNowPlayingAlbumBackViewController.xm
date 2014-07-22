@@ -54,7 +54,7 @@
 }
 
 %new
--(void)swipableView:(id)view pinchedToScale:(double)scale withVelocity:(double)velocity {
+-(void)swipableView:(id)view pinchedToScale:(CGFloat)scale withVelocity:(CGFloat)velocity {
 
   [self performActionForKey:kGestureBackPinch];
 
@@ -63,8 +63,8 @@
 %new
 -(void)swipableView:(id)view 
        pannedInDirection:(int)direction 
-       withDistance:(double)distance 
-       withVelocity:(double)velocity {
+       withDistance:(CGFloat)distance 
+       withVelocity:(CGFloat)velocity {
 
   switch(direction) {
     
